@@ -20,8 +20,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.titleLabel.text = nameTitle
-        //self.postImage.image = UIImage(named: myDetailImage!)
+        self.postImage.image = UIImage(named: "placeholder.png")
         
+        //Hello world
         // Do any additional setup after loading the view.
     }
 
