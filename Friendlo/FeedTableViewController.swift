@@ -45,7 +45,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gets()
+        //gets()
         
         var query = PFQuery(className:"Post")
         //query.whereKey("username", equalTo: PFUser.currentUser().username)
@@ -171,6 +171,39 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         var detailedViewController: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
         
         detailedViewController.nameTitle = titles[indexPath.row]
+        
+        if pic[indexPath.row] == 1 {
+            
+            imageFiles[indexPath.row].getDataInBackgroundWithBlock{
+                (imageData: NSData!, error: NSError!) -> Void in
+                
+                if error == nil {
+                    let image = UIImage(data: imageData)
+                    detailedViewController.postImage.image = image
+                }
+                
+            }
+            
+            
+        } else {
+            
+            //println(red)
+            //println(imageFiles)
+            
+            detailedViewController.tik = 0
+            detailedViewController.red = red[indexPath.row]
+            detailedViewController.green = green[indexPath.row]
+            detailedViewController.blue = blue[indexPath.row]
+            //detailedViewController.postImage.backgroundColor = UIColor(red: red[indexPath.row], green: green[indexPath.row], blue: blue[indexPath.row], alpha: 1.0)
+            
+            //var bgColorView = UIView()
+            //bgColorView.backgroundColor = UIColor(red: red[indexPath.row], green: green[indexPath.row], blue: blue[indexPath.row], alpha: 1.0)
+            
+            //detailedViewController.selectedBackgroundView = bgColorView
+            
+            //detailedViewController.shadow.backgroundColor = UIColor(red: red[indexPath.row], green: green[indexPath.row], blue: blue[indexPath.row], alpha: 0.0)
+            
+        }
         
         self.presentViewController(detailedViewController, animated: true, completion: nil)
         

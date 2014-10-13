@@ -15,12 +15,21 @@ class DetailViewController: UIViewController {
     
     var nameTitle: String?
     var myDetailImage: String?
+    var tik: Int?
+    var red = CGFloat()
+    var green = CGFloat()
+    var blue = CGFloat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.titleLabel.text = nameTitle
-        self.postImage.image = UIImage(named: "placeholder.png")
+        //self.postImage.image = UIImage(named: "placeholder.png")
+        
+        if tik == 0 {
+            //self.postImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+            self.postImage.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        }
         
         //Hello world
         // Do any additional setup after loading the view.
