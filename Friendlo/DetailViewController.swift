@@ -8,10 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate {
 
+    
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    
+    var items = ["We", "Heart", "Swift"]
     
     var nameTitle: String?
     var myDetailImage: String?
@@ -26,13 +30,39 @@ class DetailViewController: UIViewController {
         self.titleLabel.text = nameTitle
         //self.postImage.image = UIImage(named: "placeholder.png")
         
+        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
         if tik == 0 {
             //self.postImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
             self.postImage.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
         }
         
+        
         //Hello world
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
+    
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = self.items[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        println("You selected cell #\(indexPath.row)!")
     }
 
     override func didReceiveMemoryWarning() {
