@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Friendlo/SendViewController.swift"
-            timestampString = "434374386.478681"
+            timestampString = "434905138.395859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "displayColors()"
             landmarkType = "5">
          </BreakpointContent>

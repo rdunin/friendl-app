@@ -163,7 +163,7 @@ class SendViewController: UIViewController, UITextViewDelegate, UINavigationCont
         //self.setNeedsStatusBarAppearanceUpdate()
         
         photoSelected = 0
-        //titleText!.delegate = self
+        titleText!.delegate = self
         //desctext.text = ""
         //descrText.backgroundColor = UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1)
         //postImage.backgroundColor = UIColor(red: 103.0/255.0, green: 128.0/255.0, blue: 159.0/255.0, alpha: 1)
@@ -182,7 +182,6 @@ class SendViewController: UIViewController, UITextViewDelegate, UINavigationCont
             textView.text = ""
         }
     }
-    
     
     func displayColors(){
         
