@@ -8,14 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDelegate {
+class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelegate {
 
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
-    var items = ["We", "Heart", "Swift"]
+    var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon"]
     
     var nameTitle: String?
     var myDetailImage: String?
@@ -71,6 +71,8 @@ class DetailViewController: UIViewController, UITableViewDelegate {
     }
     
 
+    
+    
     /*
     // MARK: - Navigation
 

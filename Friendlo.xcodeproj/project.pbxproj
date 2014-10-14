@@ -29,6 +29,7 @@
 		0F38C66119DF65FE00D45661 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F38C66019DF65FE00D45661 /* StoreKit.framework */; };
 		0F38C66319DF660900D45661 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F38C66219DF660900D45661 /* SystemConfiguration.framework */; };
 		0F38C66719DF777E00D45661 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38C66619DF777E00D45661 /* FeedTableViewController.swift */; };
+		0F4411A619ED414200444168 /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4411A519ED414200444168 /* ResponsiveTextFieldViewController.swift */; };
 		0F53967419E0BBA30016A68B /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53967319E0BBA30016A68B /* SendViewController.swift */; };
 		0F53967619E0BED60016A68B /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F53967519E0BED60016A68B /* placeholder.png */; };
 		0F563C9119E6EC9F005FFB7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F563C9019E6EC9F005FFB7C /* DetailViewController.swift */; };
@@ -75,6 +76,7 @@
 		0F38C66019DF65FE00D45661 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F38C66219DF660900D45661 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0F38C66619DF777E00D45661 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		0F4411A519ED414200444168 /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
 		0F53967319E0BBA30016A68B /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		0F53967519E0BED60016A68B /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		0F563C9019E6EC9F005FFB7C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				0F53967519E0BED60016A68B /* placeholder.png */,
 				0FF7A38419E368D400A1965E /* Cell.swift */,
 				0F563C9019E6EC9F005FFB7C /* DetailViewController.swift */,
+				0F4411A519ED414200444168 /* ResponsiveTextFieldViewController.swift */,
 			);
 			path = Friendlo;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				0F563C9119E6EC9F005FFB7C /* DetailViewController.swift in Sources */,
 				0F38C66719DF777E00D45661 /* FeedTableViewController.swift in Sources */,
 				0F2332D819DF001A004BAF2C /* AppDelegate.swift in Sources */,
+				0F4411A619ED414200444168 /* ResponsiveTextFieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
