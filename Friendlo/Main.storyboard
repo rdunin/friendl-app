@@ -66,10 +66,12 @@
                             <constraint firstItem="fh7-go-lgW" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="tjh-Rg-J17"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bM4-BE-Ab2"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="ThR-EN-SMH" kind="show" identifier="userFeed" id="jHG-HZ-wJX"/>
+                        <segue destination="fbt-1k-nlo" kind="show" identifier="Checknet" id="1GI-GQ-7vM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -406,6 +408,51 @@
             </objects>
             <point key="canvasLocation" x="852" y="17"/>
         </scene>
+        <!--Net Status View-->
+        <scene sceneID="AoC-C5-7Gd">
+            <objects>
+                <viewController id="fbt-1k-nlo" customClass="NetStatusView" customModule="Friendlo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pwz-Wd-0ep"/>
+                        <viewControllerLayoutGuide type="bottom" id="93S-rf-KOz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S80-2M-hzW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sorry but this appliction can't work without internet. Please check your internet connection!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwP-an-IeR">
+                                <rect key="frame" x="16" y="287" width="288" height="111"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cannot Connect to the Internet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfM-h1-NwP">
+                                <rect key="frame" x="16" y="195" width="288" height="115"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-VO-2ia">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Check">
+                                    <color key="titleColor" red="0.95924346299999996" green="0.95924346299999996" blue="0.95924346299999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="QEr-Ft-xzq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXL-Wu-a9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="786"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="id0-9S-ojE">
             <objects>
@@ -592,6 +639,7 @@
         <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ly7-60-AJ2"/>
+        <segue reference="jHG-HZ-wJX"/>
+        <segue reference="QEr-Ft-xzq"/>
     </inferredMetricsTieBreakers>
 </document>

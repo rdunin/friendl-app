@@ -95,12 +95,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if Connect.isConnectedToNetwork() {
-            println("Internet is connect")
-        } else {
-            println("Not connected to internet")
-        }
-        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -113,9 +107,17 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if PFUser.currentUser() != nil {
-            self.performSegueWithIdentifier("userFeed", sender: self)
+        
+        if Connect.isConnectedToNetwork() {
+            if PFUser.currentUser() != nil {
+                self.performSegueWithIdentifier("userFeed", sender: self)
+            }
+        } else {
+            println("Not connected to internet")
+            self.performSegueWithIdentifier("Checknet", sender: self)
         }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
