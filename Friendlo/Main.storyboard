@@ -479,6 +479,51 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ujt-Cw-8E8">
                                                 <rect key="frame" x="0.0" y="320" width="320" height="460"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ccell" rowHeight="60" id="XbD-5a-XAZ" customClass="Comcell" customModule="Friendlo" customModuleProvider="target">
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XbD-5a-XAZ" id="shx-Hs-Rm8">
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="t2d-bs-fk6" userLabel="ava">
+                                                                    <rect key="frame" x="8" y="9" width="35" height="35"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="35" id="44u-30-six"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="s5R-dH-lTs"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpP-7W-akf" userLabel="name">
+                                                                    <rect key="frame" x="51" y="9" width="261" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" red="0.15737565479157903" green="0.2724436905579708" blue="0.89180086096938771" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggq-tL-Lho" userLabel="comm">
+                                                                    <rect key="frame" x="51" y="28" width="261" height="19"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Ggq-tL-Lho" firstAttribute="leading" secondItem="t2d-bs-fk6" secondAttribute="trailing" constant="8" id="2Yv-xm-j8z"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="Ggq-tL-Lho" secondAttribute="bottom" constant="4" id="2cu-rc-ueV"/>
+                                                                <constraint firstItem="Ggq-tL-Lho" firstAttribute="trailing" secondItem="shx-Hs-Rm8" secondAttribute="trailingMargin" id="FGN-Dt-syq"/>
+                                                                <constraint firstItem="t2d-bs-fk6" firstAttribute="top" secondItem="shx-Hs-Rm8" secondAttribute="topMargin" id="QjE-Du-zgV"/>
+                                                                <constraint firstItem="PpP-7W-akf" firstAttribute="leading" secondItem="t2d-bs-fk6" secondAttribute="trailing" constant="8" id="eOQ-Y8-goI"/>
+                                                                <constraint firstItem="PpP-7W-akf" firstAttribute="top" secondItem="shx-Hs-Rm8" secondAttribute="topMargin" id="l6t-jV-QEu"/>
+                                                                <constraint firstItem="PpP-7W-akf" firstAttribute="trailing" secondItem="shx-Hs-Rm8" secondAttribute="trailingMargin" id="xdq-Vl-lSN"/>
+                                                                <constraint firstItem="t2d-bs-fk6" firstAttribute="leading" secondItem="shx-Hs-Rm8" secondAttribute="leadingMargin" id="yUf-3E-kYL"/>
+                                                                <constraint firstItem="PpP-7W-akf" firstAttribute="top" secondItem="Ggq-tL-Lho" secondAttribute="top" constant="-19" id="z8E-KZ-FZR"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="avaImage" destination="t2d-bs-fk6" id="aP1-Fj-3cL"/>
+                                                            <outlet property="comm" destination="Ggq-tL-Lho" id="l2T-mE-App"/>
+                                                            <outlet property="name" destination="PpP-7W-akf" id="S7P-ty-C0j"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
                                                 <sections/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="341-Qz-McG" id="A4S-YO-inl"/>
@@ -532,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0T-yA-J9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="398"/>
+            <point key="canvasLocation" x="1791" y="393"/>
         </scene>
     </scenes>
     <resources>
@@ -544,6 +589,7 @@
         <image name="iconLike" width="64" height="64"/>
         <image name="iconPhoto" width="32" height="32"/>
         <image name="logo2.png" width="280" height="200"/>
+        <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ly7-60-AJ2"/>
