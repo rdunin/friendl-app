@@ -95,7 +95,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        if Connect.isConnectedToNetwork() {
+            println("Internet is connect")
+        } else {
+            println("Not connected to internet")
+        }
         
     }
     

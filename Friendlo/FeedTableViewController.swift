@@ -45,6 +45,12 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Connect.isConnectedToNetwork() {
+            println("Internet is connect 2")
+        } else {
+            println("Not connected to internet 2")
+        }
+        
         //gets()
         
         var query = PFQuery(className:"Post")
@@ -281,6 +287,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
     
     func gets() {
         

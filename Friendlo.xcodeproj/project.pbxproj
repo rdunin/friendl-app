@@ -31,6 +31,7 @@
 		0F38C66719DF777E00D45661 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38C66619DF777E00D45661 /* FeedTableViewController.swift */; };
 		0F4411A619ED414200444168 /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4411A519ED414200444168 /* ResponsiveTextFieldViewController.swift */; };
 		0F4411A819EDA04800444168 /* Comcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4411A719EDA04800444168 /* Comcell.swift */; };
+		0F4411AA19EDD9F500444168 /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4411A919EDD9F500444168 /* Connect.swift */; };
 		0F53967419E0BBA30016A68B /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53967319E0BBA30016A68B /* SendViewController.swift */; };
 		0F53967619E0BED60016A68B /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F53967519E0BED60016A68B /* placeholder.png */; };
 		0F563C9119E6EC9F005FFB7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F563C9019E6EC9F005FFB7C /* DetailViewController.swift */; };
@@ -79,6 +80,7 @@
 		0F38C66619DF777E00D45661 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		0F4411A519ED414200444168 /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
 		0F4411A719EDA04800444168 /* Comcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comcell.swift; sourceTree = "<group>"; };
+		0F4411A919EDD9F500444168 /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
 		0F53967319E0BBA30016A68B /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		0F53967519E0BED60016A68B /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		0F563C9019E6EC9F005FFB7C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				0F563C9019E6EC9F005FFB7C /* DetailViewController.swift */,
 				0F4411A519ED414200444168 /* ResponsiveTextFieldViewController.swift */,
 				0F4411A719EDA04800444168 /* Comcell.swift */,
+				0F4411A919EDD9F500444168 /* Connect.swift */,
 			);
 			path = Friendlo;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				0F2332D819DF001A004BAF2C /* AppDelegate.swift in Sources */,
 				0F4411A619ED414200444168 /* ResponsiveTextFieldViewController.swift in Sources */,
 				0F4411A819EDA04800444168 /* Comcell.swift in Sources */,
+				0F4411AA19EDD9F500444168 /* Connect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

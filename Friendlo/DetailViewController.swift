@@ -75,6 +75,19 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
         
         //comcell.comm?.text = self.items[indexPath.row]
         
+        comcell.avaImage.layer.cornerRadius = comcell.avaImage.frame.size.width / 2
+        comcell.avaImage.clipsToBounds = true
+        
+        comcell.avaImage.layer.borderWidth = 1.0
+        comcell.avaImage.layer.borderColor = UIColor.blackColor().CGColor
+        
+        //self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+        //self.profileImageView.clipsToBounds = YES;
+        //self.profileImageView.layer.borderWidth = 3.0f;
+        //self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+
+        
+        
         let hotelName = hotelNames[indexPath.row]
         comcell.name.text = hotelName
         comcell.comm.text = hotels[hotelName]
