@@ -451,7 +451,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxS-jq-e8N">
-                                        <rect key="frame" x="0.0" y="-192" width="320" height="760"/>
+                                        <rect key="frame" x="0.0" y="-250" width="320" height="780"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zF7-eM-6ep">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -477,7 +477,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ujt-Cw-8E8">
-                                                <rect key="frame" x="0.0" y="320" width="320" height="270"/>
+                                                <rect key="frame" x="0.0" y="320" width="320" height="460"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <sections/>
                                                 <connections>
@@ -492,7 +492,7 @@
                                             <constraint firstAttribute="width" constant="320" id="ehL-OV-TEv"/>
                                             <constraint firstItem="zF7-eM-6ep" firstAttribute="leading" secondItem="fxS-jq-e8N" secondAttribute="leading" id="gBE-pm-MC6"/>
                                             <constraint firstAttribute="trailing" secondItem="zF7-eM-6ep" secondAttribute="trailing" id="qZi-l1-S2R"/>
-                                            <constraint firstAttribute="height" constant="760" id="uhf-VB-dPu"/>
+                                            <constraint firstAttribute="height" constant="780" id="uhf-VB-dPu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -504,10 +504,10 @@
                                 </constraints>
                             </scrollView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write answer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-kZ-RuD">
-                                <rect key="frame" x="8" y="533" width="304" height="35"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="533" width="320" height="35"/>
+                                <color key="backgroundColor" red="0.95924346301020402" green="0.95924346301020402" blue="0.95924346301020402" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="OEA-W9-hds"/>
+                                    <constraint firstAttribute="height" constant="35" id="eLJ-hU-7rH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -515,13 +515,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dGF-kZ-RuD" secondAttribute="trailing" constant="-8" id="I9R-LW-BGl"/>
-                            <constraint firstItem="utl-Ms-8BM" firstAttribute="top" secondItem="dGF-kZ-RuD" secondAttribute="bottom" constant="4" id="NQj-uc-GKP"/>
-                            <constraint firstItem="utl-Ms-8BM" firstAttribute="top" secondItem="dGF-kZ-RuD" secondAttribute="bottom" id="f1N-83-EMl"/>
-                            <constraint firstItem="dGF-kZ-RuD" firstAttribute="leading" secondItem="2Bx-sm-Q0l" secondAttribute="leadingMargin" constant="-8" id="gnl-WJ-cUe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dGF-kZ-RuD" secondAttribute="trailing" constant="-16" id="801-cW-OMX"/>
+                            <constraint firstItem="dGF-kZ-RuD" firstAttribute="leading" secondItem="2Bx-sm-Q0l" secondAttribute="leadingMargin" constant="-16" id="DKE-33-0Xq"/>
                             <constraint firstItem="YyC-Sf-CyJ" firstAttribute="top" secondItem="2Bx-sm-Q0l" secondAttribute="top" id="uRf-Zw-lqT"/>
                             <constraint firstAttribute="trailing" secondItem="YyC-Sf-CyJ" secondAttribute="trailing" id="vVg-vF-9Wj"/>
                             <constraint firstItem="YyC-Sf-CyJ" firstAttribute="leading" secondItem="2Bx-sm-Q0l" secondAttribute="leading" id="vx5-fc-y2m"/>
+                            <constraint firstItem="utl-Ms-8BM" firstAttribute="top" secondItem="dGF-kZ-RuD" secondAttribute="bottom" id="z7W-fN-FBN"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

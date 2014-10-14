@@ -12,7 +12,7 @@ import UIKit
 class ResponsiveTextFieldViewController : UIViewController
 {
     
-    var kPreferredTextFieldToKeyboardOffset: CGFloat = 20.0
+    var kPreferredTextFieldToKeyboardOffset: CGFloat = 0.0
     var keyboardFrame: CGRect = CGRect.nullRect
     var keyboardIsShowing: Bool = false
     weak var activeTextField: UITextField?

@@ -15,7 +15,7 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
-    var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon"]
+    var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon", "Hello", "Petya", "Visi", "Colya"]
     
     var nameTitle: String?
     var myDetailImage: String?
