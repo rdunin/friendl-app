@@ -39,6 +39,7 @@
 		0F568A1419E8612800513200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F568A1319E8612800513200 /* Main.storyboard */; };
 		0FF7A38319E2AE4000A1965E /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7A38219E2AE4000A1965E /* logo2.png */; };
 		0FF7A38519E368D400A1965E /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7A38419E368D400A1965E /* Cell.swift */; };
+		0FFC645919EF22080000D2FB /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC645819EF22080000D2FB /* UsersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		0F568A1319E8612800513200 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0FF7A38219E2AE4000A1965E /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		0FF7A38419E368D400A1965E /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		0FFC645819EF22080000D2FB /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				0F4411A719EDA04800444168 /* Comcell.swift */,
 				0F4411A919EDD9F500444168 /* Connect.swift */,
 				0F4411AB19EDE36100444168 /* NetStatusView.swift */,
+				0FFC645819EF22080000D2FB /* UsersViewController.swift */,
 			);
 			path = Friendlo;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				0F53967419E0BBA30016A68B /* SendViewController.swift in Sources */,
 				0F2332DA19DF001A004BAF2C /* ViewController.swift in Sources */,
 				0FF7A38519E368D400A1965E /* Cell.swift in Sources */,
+				0FFC645919EF22080000D2FB /* UsersViewController.swift in Sources */,
 				0F563C9119E6EC9F005FFB7C /* DetailViewController.swift in Sources */,
 				0F38C66719DF777E00D45661 /* FeedTableViewController.swift in Sources */,
 				0F2332D819DF001A004BAF2C /* AppDelegate.swift in Sources */,

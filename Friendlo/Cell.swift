@@ -20,6 +20,13 @@ class Cell: UITableViewCell {
     @IBOutlet var avatar: UIButton!
     @IBOutlet var names: UIButton!
     
+    @IBAction func avaClick(sender: AnyObject) {
+       
+    }
+    
+    @IBAction func nameClick(sender: AnyObject) {
+    
+    }
     
     @IBAction func feedLike(sender: AnyObject) {
     }
@@ -31,8 +38,10 @@ class Cell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
+    
+    
 }

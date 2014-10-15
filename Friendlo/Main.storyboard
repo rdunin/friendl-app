@@ -168,14 +168,21 @@
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="avaClick:" destination="Xxf-dV-fIK" eventType="touchUpInside" id="dSr-aI-MBK"/>
+                                                <segue destination="R3H-2g-LGW" kind="show" identifier="avaclick" id="REt-FT-3zy"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRU-SM-y3b" userLabel="Names">
                                             <rect key="frame" x="44" y="289" width="150" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Name">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="nameClick:" destination="Xxf-dV-fIK" eventType="touchUpInside" id="f5U-Jr-lgN"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcV-hP-Ppn" userLabel="CView">
                                             <rect key="frame" x="167" y="295" width="30" height="20"/>
@@ -483,6 +490,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXL-Wu-a9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852" y="732"/>
+        </scene>
+        <!--Users View Controller-->
+        <scene sceneID="KBT-Um-eAH">
+            <objects>
+                <viewController id="R3H-2g-LGW" customClass="UsersViewController" customModule="Friendlo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="leF-l8-GRJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sp4-2b-1BL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q92-4X-eyr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ao-bQ-pCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="-659"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="id0-9S-ojE">

@@ -39,7 +39,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     }
     
     @IBAction func logout(sender: AnyObject) {
-        PFUser.logOut()
+        //PFUser.logOut()
         self.performSegueWithIdentifier("logout", sender: self)
     }
     
@@ -136,6 +136,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         let myCell:Cell = tableView.dequeueReusableCellWithIdentifier("myCell") as Cell
         
         myCell.titleTexts.text = titles[indexPath.row]
+        
         //myCell.names.text = usernam[indexPath.row]
         //myCell.avatar.layer.cornerRadius = 5.0
         
@@ -273,6 +274,21 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         
         self.presentViewController(detailedViewController, animated: true, completion: nil)
         
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "avaclick"{
+            
+            var indexPath = self.tableView.indexPathForCell(cell: UITableViewCell.self)
+            
+            //let vc = segue.destinationViewController as UsersViewController
+            
+            println(sender)
+            
+        }else{
+            println("Procc")
+        }
     }
     
     /*
