@@ -45,6 +45,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //UIApplication.sharedApplication().statusBarHidden = false
         //gets()
         
         var query = PFQuery(className:"Post")

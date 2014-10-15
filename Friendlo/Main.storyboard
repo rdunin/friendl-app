@@ -241,7 +241,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="v5L-la-Axi">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="iLF-az-th5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="iLF-az-th5">
                             <connections>
                                 <action selector="logout:" destination="ZRv-Vt-fy1" id="p6h-od-KVA"/>
                             </connections>
@@ -259,7 +259,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bCs-3d-REi">
                             <connections>
-                                <segue destination="UYf-P6-Hxd" kind="presentation" identifier="info" id="DKz-HK-ngA"/>
+                                <segue destination="UYf-P6-Hxd" kind="show" identifier="info" id="DKz-HK-ngA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -365,12 +365,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zzu-jd-429">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Exr-5c-Mfy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Exr-5c-Mfy">
                             <connections>
-                                <segue destination="ThR-EN-SMH" kind="presentation" identifier="backfeed" id="gJ0-BH-th1"/>
+                                <segue destination="ThR-EN-SMH" kind="show" identifier="backfeed" id="gJ0-BH-th1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rZ8-me-e87">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rZ8-me-e87">
                             <connections>
                                 <action selector="sendPost:" destination="d8r-xd-Cci" id="QO8-mX-Z9e"/>
                             </connections>
@@ -434,7 +434,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-VO-2ia">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Check">
                                     <color key="titleColor" red="0.95924346299999996" green="0.95924346299999996" blue="0.95924346299999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -451,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXL-Wu-a9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="786"/>
+            <point key="canvasLocation" x="852" y="732"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="id0-9S-ojE">
@@ -497,8 +497,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YyC-Sf-CyJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxS-jq-e8N">
-                                        <rect key="frame" x="0.0" y="-250" width="320" height="780"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxS-jq-e8N">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="780"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zF7-eM-6ep">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
@@ -507,16 +507,6 @@
                                                     <constraint firstAttribute="width" constant="320" id="JXB-5c-9cU"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qN-uF-Msa">
-                                                <rect key="frame" x="8" y="8" width="30" height="30"/>
-                                                <state key="normal" title="X">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="ThR-EN-SMH" kind="show" id="ly7-60-AJ2"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-fj-bjD">
                                                 <rect key="frame" x="16" y="95" width="288" height="130"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -577,6 +567,16 @@
                                                     <outlet property="delegate" destination="341-Qz-McG" id="Nv3-Vy-h9L"/>
                                                 </connections>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qN-uF-Msa">
+                                                <rect key="frame" x="10" y="25" width="30" height="30"/>
+                                                <state key="normal" image="iconClose">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="ThR-EN-SMH" kind="presentation" modalTransitionStyle="crossDissolve" id="ly7-60-AJ2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -630,6 +630,7 @@
     <resources>
         <image name="button_fb.png" width="454" height="97"/>
         <image name="iconBgs" width="23" height="17"/>
+        <image name="iconClose" width="48" height="48"/>
         <image name="iconComm" width="64" height="64"/>
         <image name="iconEye" width="64" height="64"/>
         <image name="iconImage" width="22" height="18"/>
@@ -639,7 +640,7 @@
         <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jHG-HZ-wJX"/>
-        <segue reference="QEr-Ft-xzq"/>
+        <segue reference="gJ0-BH-th1"/>
+        <segue reference="qkI-Bz-tLf"/>
     </inferredMetricsTieBreakers>
 </document>
