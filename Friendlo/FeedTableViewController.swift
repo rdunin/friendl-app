@@ -15,7 +15,8 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     
     var pic = [Int]()
     var titles = [String]()
-    var usernames = [String]()
+    var usernam = [String]()
+    var avatar = [PFFile]()
     var images = [UIImage]()
     var imageFiles = [PFFile]()
     
@@ -46,7 +47,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         super.viewDidLoad()
         
         //UIApplication.sharedApplication().statusBarHidden = false
-        //gets()
+        gets()
         
         var query = PFQuery(className:"Post")
         //query.whereKey("username", equalTo: PFUser.currentUser().username)
@@ -57,10 +58,13 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
                 // The find succeeded.
                 NSLog("Successfully retrieved \(objects.count) scores.")
                 // Do something with the found objects
+                
                 for object in objects {
                     
                     self.pic.append(object["pic"] as Int)
                     self.titles.append(object["title"] as String)
+                    self.usernam.append(object["username"] as String)
+                    
                     if object["pic"] as Int == 1 {
                         self.imageFiles.append(object["imagefile"] as PFFile)
                         
@@ -131,9 +135,43 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let myCell:Cell = tableView.dequeueReusableCellWithIdentifier("myCell") as Cell
         
-        
-        
         myCell.titleTexts.text = titles[indexPath.row]
+        //myCell.names.text = usernam[indexPath.row]
+        
+        //myCell.avatar.layer.cornerRadius = 5.0
+        
+        myCell.avatar.layer.cornerRadius = myCell.avatar.frame.size.width / 2
+        myCell.avatar.clipsToBounds = true
+        myCell.avatar.layer.borderWidth = 0.5
+        myCell.avatar.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        var poster = PFUser.query()
+        poster.whereKey("username", equalTo: usernam[indexPath.row])
+        poster.findObjectsInBackgroundWithBlock {
+            (users: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                
+                //println(users)
+                
+                for use in users {
+                    var nam: String = (use["first_name"] as String) + " " + (use["last_name"] as String)
+                    //self.avatar.append(object["picture"] as PFFile)
+                    myCell.names.text = nam
+                    
+                    let userImageFile = use["picture"] as PFFile
+                    userImageFile.getDataInBackgroundWithBlock {
+                        (imageData: NSData!, error: NSError!) -> Void in
+                        if error == nil {
+                            myCell.avatar.image = UIImage(data:imageData)
+                        }
+                    }
+                    
+                    
+                    //self.tableView.reloadData()
+                }
+            }
+        }
+        
         
         if pic[indexPath.row] == 1 {
         
@@ -151,8 +189,8 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
             
         } else {
         
-            println(red)
-            println(imageFiles)
+            //println(red)
+            //println(imageFiles)
             
             myCell.titleImage.backgroundColor = UIColor(red: red[indexPath.row], green: green[indexPath.row], blue: blue[indexPath.row], alpha: 1.0)
             

@@ -52,7 +52,7 @@ class ViewController: UIViewController {
                             var faceBookGender = userData.objectForKey("gender") as NSString
                             var faceBookLocale = userData.objectForKey("locale") as NSString
                             
-                            var url:NSURL = NSURL.URLWithString(NSString(format:"https://graph.facebook.com/%@/picture?width=320", faceBookId))
+                            var url:NSURL = NSURL.URLWithString(NSString(format:"https://graph.facebook.com/%@/picture?width=50", faceBookId))
                             var err: NSError?
                             var imageData :NSData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
                             var imageFile = PFFile(name: "image.jpg", data: imageData) as PFFile
@@ -61,10 +61,10 @@ class ViewController: UIViewController {
                             
                             userObject.setObject(faceBookId, forKey: "fbid")
                             userObject.setObject(faceBookName, forKey: "first_name")
-                            userObject.setObject(faceBookName, forKey: "last_name")
+                            userObject.setObject(faceBookMiddle, forKey: "last_name")
                             userObject.setObject(imageFile, forKey: "picture")
                             userObject.setObject(faceBookGender, forKey: "gender")
-                            userObject.setObject(faceBookGender, forKey: "locale")
+                            userObject.setObject(faceBookLocale, forKey: "locale")
                             
                             userObject.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
                                 if success == true {

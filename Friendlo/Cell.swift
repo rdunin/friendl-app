@@ -14,6 +14,14 @@ class Cell: UITableViewCell {
     @IBOutlet var titleTexts: UILabel!
     @IBOutlet var shadow: UIImageView!
     
+    @IBOutlet var countLike: UILabel!
+    @IBOutlet var countComm: UILabel!
+    @IBOutlet var avatar: UIImageView!
+    @IBOutlet var names: UILabel!
+    
+    
+    @IBAction func feedLike(sender: AnyObject) {
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
