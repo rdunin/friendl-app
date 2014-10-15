@@ -10,10 +10,20 @@ import UIKit
 
 class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelegate {
 
+    @IBOutlet var clike: UILabel!
+    @IBOutlet var ccomm: UILabel!
+    @IBOutlet var sname: UIButton!
+    @IBOutlet var avatar: UIButton!
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var BLike: UIButton!
+    @IBAction func DLike(sender: AnyObject) {
+        
+    }
+    
     
     var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon", "Hello", "Petya", "Visi", "Colya", "Gylla"]
     

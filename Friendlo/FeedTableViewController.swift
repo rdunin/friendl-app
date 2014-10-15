@@ -47,7 +47,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         super.viewDidLoad()
         
         //UIApplication.sharedApplication().statusBarHidden = false
-        gets()
+        //gets()
         
         var query = PFQuery(className:"Post")
         //query.whereKey("username", equalTo: PFUser.currentUser().username)
@@ -137,7 +137,6 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         
         myCell.titleTexts.text = titles[indexPath.row]
         //myCell.names.text = usernam[indexPath.row]
-        
         //myCell.avatar.layer.cornerRadius = 5.0
         
         myCell.avatar.layer.cornerRadius = myCell.avatar.frame.size.width / 2
@@ -210,6 +209,32 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         var detailedViewController: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
         
         detailedViewController.nameTitle = titles[indexPath.row]
+        
+        
+        var poster = PFUser.query()
+        poster.whereKey("username", equalTo: usernam[indexPath.row])
+        poster.findObjectsInBackgroundWithBlock {
+            (users: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                
+                for use in users {
+                    var nam: String = (use["first_name"] as String) + " " + (use["last_name"] as String)
+                    //self.avatar.append(object["picture"] as PFFile)
+                    detailedViewController.sname.setTitle(nam, forState: UIControlState.Normal)
+                    
+                    let userImageFile = use["picture"] as PFFile
+                    userImageFile.getDataInBackgroundWithBlock {
+                        (imageData: NSData!, error: NSError!) -> Void in
+                        if error == nil {
+                            var image = UIImage(data:imageData)
+                            detailedViewController.avatar.setImage(image, forState: UIControlState.Normal)
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
         
         if pic[indexPath.row] == 1 {
             
