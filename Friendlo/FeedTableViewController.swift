@@ -280,7 +280,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "avaclick"{
             
-            var indexPath = self.tableView.indexPathForCell(cell: UITableViewCell.self)
+            //var indexPath = self.tableView.indexPathForCell(cell: UITableViewCell.self)
             
             //let vc = segue.destinationViewController as UsersViewController
             
