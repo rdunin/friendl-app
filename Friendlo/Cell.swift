@@ -16,8 +16,9 @@ class Cell: UITableViewCell {
     
     @IBOutlet var countLike: UILabel!
     @IBOutlet var countComm: UILabel!
-    @IBOutlet var avatar: UIImageView!
-    @IBOutlet var names: UILabel!
+   
+    @IBOutlet var avatar: UIButton!
+    @IBOutlet var names: UIButton!
     
     
     @IBAction func feedLike(sender: AnyObject) {

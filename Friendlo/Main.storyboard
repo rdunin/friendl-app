@@ -157,15 +157,26 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="n4h-Rx-kzD" userLabel="avatar">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm2-kQ-sey" userLabel="Avatar">
                                             <rect key="frame" x="6" y="284" width="30" height="30"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roman Dunin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSu-Gm-p9e" userLabel="names">
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRU-SM-y3b" userLabel="Names">
                                             <rect key="frame" x="44" y="289" width="150" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcV-hP-Ppn" userLabel="CView">
                                             <rect key="frame" x="167" y="295" width="30" height="20"/>
                                             <constraints>
@@ -244,10 +255,10 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="avatar" destination="n4h-Rx-kzD" id="O6e-NQ-L4a"/>
+                                    <outlet property="avatar" destination="Zm2-kQ-sey" id="mcJ-sV-7jm"/>
                                     <outlet property="countComm" destination="yvc-lK-iYt" id="5X8-fK-1Vj"/>
                                     <outlet property="countLike" destination="ZlH-d9-oci" id="BnB-rp-WpO"/>
-                                    <outlet property="names" destination="xSu-Gm-p9e" id="OhP-6y-JmI"/>
+                                    <outlet property="names" destination="yRU-SM-y3b" id="fVD-8s-J0W"/>
                                     <outlet property="shadow" destination="pz1-Op-cRJ" id="Cl4-tg-pAa"/>
                                     <outlet property="titleImage" destination="WPn-hT-ovL" id="XGc-g3-hEe"/>
                                     <outlet property="titleTexts" destination="9s4-ph-f0j" id="EEt-ji-ifw"/>
@@ -626,7 +637,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgI-Zf-2eW" userLabel="Avatar">
                                                 <rect key="frame" x="6" y="284" width="30" height="30"/>
-                                                <state key="normal" image="placeholder.png">
+                                                <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
