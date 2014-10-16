@@ -10,12 +10,22 @@ import UIKit
 
 class UsersViewController: UIViewController {
 
-    var nameTitle = String()
+    var usernam = String()
+    @IBOutlet var avatar: UIImageView!
+    @IBOutlet var uname: UILabel!
+    var fbid = String()
+    
+    @IBAction func facelink(sender: AnyObject) {
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://www.facebook.com/app_scoped_user_id/\(fbid)"))
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        println(nameTitle)
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +35,46 @@ class UsersViewController: UIViewController {
     }
     
 
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+        
+        avatar.layer.cornerRadius = avatar.frame.size.width / 2
+        avatar.clipsToBounds = true
+        avatar.layer.borderWidth = 1.0
+        avatar.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        var poster = PFUser.query()
+        poster.whereKey("username", equalTo: usernam)
+        poster.findObjectsInBackgroundWithBlock {
+            (users: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                
+                for use in users {
+                    var nam: String = (use["first_name"] as String) + " " + (use["last_name"] as String)
+                    self.uname.text = nam
+                    self.fbid = use["fbid"] as String
+                    //self.avatar.append(object["picture"] as PFFile)
+                    //detailedViewController.sname.setTitle(nam, forState: UIControlState.Normal)
+                    
+                    let userImageFile = use["picture"] as PFFile
+                    userImageFile.getDataInBackgroundWithBlock {
+                        (imageData: NSData!, error: NSError!) -> Void in
+                        if error == nil {
+                            self.avatar.image = UIImage(data:imageData)
+                            //avatar.setImage(image, forState: UIControlState.Normal)
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     /*
     // MARK: - Navigation
 

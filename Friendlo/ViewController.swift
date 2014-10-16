@@ -47,8 +47,10 @@ class ViewController: UIViewController {
                             //FACEBOOK DATA IN DICTIONARY
                             var userData = result as NSDictionary
                             var faceBookId = userData.objectForKey("id") as NSString
-                            var faceBookName = userData.objectForKey("first_name") as NSString
-                            var faceBookMiddle = userData.objectForKey("last_name") as NSString
+                            var faceBookEmail = userData.objectForKey("email") as NSString
+                            var faceBookName = userData.objectForKey("name") as NSString
+                            var faceBookFname = userData.objectForKey("first_name") as NSString
+                            var faceBookLname = userData.objectForKey("last_name") as NSString
                             var faceBookGender = userData.objectForKey("gender") as NSString
                             var faceBookLocale = userData.objectForKey("locale") as NSString
                             
@@ -60,8 +62,10 @@ class ViewController: UIViewController {
                             //println(userData)
                             
                             userObject.setObject(faceBookId, forKey: "fbid")
-                            userObject.setObject(faceBookName, forKey: "first_name")
-                            userObject.setObject(faceBookMiddle, forKey: "last_name")
+                            userObject.setObject(faceBookEmail, forKey: "email")
+                            userObject.setObject(faceBookName, forKey: "username")
+                            userObject.setObject(faceBookFname, forKey: "first_name")
+                            userObject.setObject(faceBookLname, forKey: "last_name")
                             userObject.setObject(imageFile, forKey: "picture")
                             userObject.setObject(faceBookGender, forKey: "gender")
                             userObject.setObject(faceBookLocale, forKey: "locale")

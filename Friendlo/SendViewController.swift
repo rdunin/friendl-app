@@ -83,6 +83,7 @@ class SendViewController: UIViewController, UITextViewDelegate, UINavigationCont
             var post = PFObject(className: "Post")
             post["title"] = titleText.text
             post["username"] = PFUser.currentUser().username
+            post["userId"] = PFUser.currentUser().objectId
             
             post.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
                 
@@ -109,13 +110,13 @@ class SendViewController: UIViewController, UITextViewDelegate, UINavigationCont
                         if success == false {
                             self.dispayAlert("Can't Post Image", error: "Please try again latter")
                         }else{
-                            self.dispayAlert("Image Posted", error: "It's OK")
-                            
-                            self.photoSelected = 0
+                            //self.dispayAlert("Your Post is posted", error: "It's OK")
+                            self.performSegueWithIdentifier("savefeed", sender: self)
+                            //self.photoSelected = 0
                             //self.postImage.image = UIImage(named: "")
-                            self.titleText.text = "Question or needs..."
+                            //self.titleText.text = "Question or needs..."
                             
-                            println("posted sucessful")
+                            //println("posted sucessful")
                             
                             }
                      }
@@ -135,14 +136,16 @@ class SendViewController: UIViewController, UITextViewDelegate, UINavigationCont
                             
                             if success == false {
                                 self.dispayAlert("Can't Post Image", error: "Please try again latter")
+                                
                             }else{
-                                self.dispayAlert("Image Posted", error: "It's OK")
+                                //self.dispayAlert("Your Post is posted", error: "It's OK")
+                                self.performSegueWithIdentifier("savefeed", sender: self)
                                 
-                                self.photoSelected = 0
+                                //self.photoSelected = 0
                                 //self.postImage.image = UIImage(named: "")
-                                self.titleText.text = "Question or needs..."
+                                //self.titleText.text = "Question or needs..."
                                 
-                                println("posted sucessful")
+                                //println("posted sucessful")
                                 
                             }
                         }

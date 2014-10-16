@@ -24,6 +24,12 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
         
     }
     
+    @IBOutlet var commText: UITextField!
+    @IBAction func postButton(sender: AnyObject) {
+        println(commText.text)
+        tableView.reloadData()
+        commText.text = ""
+    }
     
     var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon", "Hello", "Petya", "Visi", "Colya", "Gylla"]
     

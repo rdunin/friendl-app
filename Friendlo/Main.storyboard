@@ -20,7 +20,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-go-lgW">
                                 <rect key="frame" x="0.0" y="-2" width="320" height="578"/>
-                                <color key="backgroundColor" red="0.12156862745098039" green="0.22745098039215686" blue="0.57647058823529407" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2.png" translatesAutoresizingMaskIntoConstraints="NO" id="HsE-Rl-sUP">
                                 <rect key="frame" x="97" y="155" width="126" height="90"/>
@@ -172,18 +172,19 @@
                                             <connections>
                                                 <action selector="avButt:" destination="ZRv-Vt-fy1" eventType="touchUpInside" id="M9l-C9-ePx"/>
                                                 <action selector="avaClick:" destination="Xxf-dV-fIK" eventType="touchUpInside" id="dSr-aI-MBK"/>
-                                                <segue destination="R3H-2g-LGW" kind="show" identifier="avaclick" id="REt-FT-3zy"/>
+                                                <segue destination="O6u-Vl-SRT" kind="show" identifier="avaclick" id="cQ9-aX-89l"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRU-SM-y3b" userLabel="Names">
                                             <rect key="frame" x="44" y="289" width="150" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                            <state key="normal" title="Name">
+                                            <state key="normal">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="nameClick:" destination="Xxf-dV-fIK" eventType="touchUpInside" id="f5U-Jr-lgN"/>
+                                                <segue destination="O6u-Vl-SRT" kind="show" identifier="nameclick" id="2VT-GJ-gli"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcV-hP-Ppn" userLabel="CView">
@@ -421,11 +422,12 @@
                     <connections>
                         <outlet property="postImage" destination="8U3-CL-fXB" id="lKY-85-O2v"/>
                         <outlet property="titleText" destination="5yd-1X-g5T" id="cKA-Fr-IOU"/>
+                        <segue destination="ThR-EN-SMH" kind="show" identifier="savefeed" id="KBk-M2-qdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVM-kE-Ii9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2433" y="-275"/>
+            <point key="canvasLocation" x="2182" y="-271"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oVR-zr-oRS">
@@ -446,7 +448,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeW-dR-6ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="17"/>
+            <point key="canvasLocation" x="898" y="17"/>
         </scene>
         <!--Net Status View-->
         <scene sceneID="AoC-C5-7Gd">
@@ -494,23 +496,68 @@
             <point key="canvasLocation" x="852" y="732"/>
         </scene>
         <!--Users View Controller-->
-        <scene sceneID="KBT-Um-eAH">
+        <scene sceneID="LRc-uv-APq">
             <objects>
-                <viewController id="R3H-2g-LGW" customClass="UsersViewController" customModule="Friendlo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O6u-Vl-SRT" customClass="UsersViewController" customModule="Friendlo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="leF-l8-GRJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Sp4-2b-1BL"/>
+                        <viewControllerLayoutGuide type="top" id="8Cl-co-L8R"/>
+                        <viewControllerLayoutGuide type="bottom" id="pp2-ag-R6V"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q92-4X-eyr">
+                    <view key="view" contentMode="scaleToFill" id="kDG-gw-1Mi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-hF-Ei6" userLabel="bg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-Av-r9q" userLabel="Close">
+                                <rect key="frame" x="10" y="25" width="30" height="30"/>
+                                <state key="normal" image="iconClose">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ThR-EN-SMH" kind="show" id="FuX-E3-cw4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ec-SW-uAX" userLabel="avatar">
+                                <rect key="frame" x="135" y="135" width="50" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR6-BX-rSy">
+                                <rect key="frame" x="90" y="193" width="140" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-LR-JWh">
+                                <rect key="frame" x="119" y="222" width="82" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facelink:" destination="O6u-Vl-SRT" eventType="touchUpInside" id="Vt0-F7-LNE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="avatar" destination="3ec-SW-uAX" id="nZo-nn-GSH"/>
+                        <outlet property="uname" destination="rR6-BX-rSy" id="fHM-oY-juh"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ao-bQ-pCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ec6-31-F8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="-659"/>
+            <point key="canvasLocation" x="1320" y="-655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="id0-9S-ojE">
@@ -539,7 +586,7 @@
                     </barButtonItem>
                 </navigationItem>
             </objects>
-            <point key="canvasLocation" x="2042" y="-273"/>
+            <point key="canvasLocation" x="1791" y="-269"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="e6F-v7-90U">
@@ -678,7 +725,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaJ-UI-QHI" userLabel="sname">
                                                 <rect key="frame" x="44" y="289" width="150" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                                <state key="normal" title="Roman">
+                                                <state key="normal">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -722,6 +769,9 @@
                                     <color key="titleColor" white="0.33308622259999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="postButton:" destination="341-Qz-McG" eventType="touchUpInside" id="2ql-UY-sa0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -742,6 +792,7 @@
                         <outlet property="avatar" destination="FgI-Zf-2eW" id="gnr-Wq-h7r"/>
                         <outlet property="ccomm" destination="IHg-ah-bws" id="QEQ-Ld-nkb"/>
                         <outlet property="clike" destination="50Y-9O-Kb7" id="m3I-71-sey"/>
+                        <outlet property="commText" destination="dGF-kZ-RuD" id="G8Y-Ia-Kqz"/>
                         <outlet property="postImage" destination="zF7-eM-6ep" id="YKp-hK-LFK"/>
                         <outlet property="sname" destination="HaJ-UI-QHI" id="3wW-Mz-uwA"/>
                         <outlet property="tableView" destination="Ujt-Cw-8E8" id="a0t-wx-48E"/>
@@ -766,7 +817,8 @@
         <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="KBk-M2-qdp"/>
         <segue reference="qkI-Bz-tLf"/>
-        <segue reference="ly7-60-AJ2"/>
+        <segue reference="cQ9-aX-89l"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     
     var pic = [Int]()
     var titles = [String]()
-    var usernam = [String]()
+    var userId = [String]()
     var avatar = [PFFile]()
     var images = [UIImage]()
     var imageFiles = [PFFile]()
@@ -39,7 +39,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     }
     
     @IBAction func logout(sender: AnyObject) {
-        //PFUser.logOut()
+        PFUser.logOut()
         self.performSegueWithIdentifier("logout", sender: self)
     }
     
@@ -47,11 +47,12 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         super.viewDidLoad()
         
         //UIApplication.sharedApplication().statusBarHidden = false
-        //gets()
+        gets()
         
         var query = PFQuery(className:"Post")
         //query.whereKey("username", equalTo: PFUser.currentUser().username)
         query.orderByDescending("createdAt")
+        query.cachePolicy = kPFCachePolicyCacheElseNetwork
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
@@ -63,7 +64,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
                     
                     self.pic.append(object["pic"] as Int)
                     self.titles.append(object["title"] as String)
-                    self.usernam.append(object["username"] as String)
+                    self.userId.append(object["userId"] as String)
                     
                     if object["pic"] as Int == 1 {
                         self.imageFiles.append(object["imagefile"] as PFFile)
@@ -146,7 +147,8 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         //myCell.avatar.layer.borderColor = UIColor.whiteColor().CGColor
         
         var poster = PFUser.query()
-        poster.whereKey("username", equalTo: usernam[indexPath.row])
+        poster.whereKey("objectId", equalTo: userId[indexPath.row])
+        poster.cachePolicy = kPFCachePolicyCacheElseNetwork
         poster.findObjectsInBackgroundWithBlock {
             (users: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
@@ -215,7 +217,8 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         
         
         var poster = PFUser.query()
-        poster.whereKey("username", equalTo: usernam[indexPath.row])
+        poster.whereKey("objectId", equalTo: userId[indexPath.row])
+        poster.cachePolicy = kPFCachePolicyCacheElseNetwork
         poster.findObjectsInBackgroundWithBlock {
             (users: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
@@ -304,12 +307,16 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
             //println(titles[row!])
             
             let vc = segue.destinationViewController as UsersViewController
-            vc.nameTitle = titles[row!]
+            vc.usernam = userId[row!]
+        
+        }else if segue.identifier == "nameclick"{
+            let conn = sender?.superview as UIView?
+            let cell = conn?.superview as UITableViewCell
+            let row = tableView.indexPathForCell(cell)?.row
+            //println(titles[row!])
             
-            //println("hello")
-            
-        }else{
-            println("Procc")
+            let vc = segue.destinationViewController as UsersViewController
+            vc.usernam = userId[row!]
         }
     }
     

@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureAppearance() {
         
         //UINavigationBar.appearance().barTintColor = UIColor(red: 31.0/255.0, green: 58.0/255.0, blue: 147.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 51.0/255.0, blue: 153.0/255.0, alpha: 0.8)
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 51.0/255.0, blue: 153.0/255.0, alpha: 0.8)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 102.0/255.0, blue: 204.0/255.0, alpha: 0.8)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline), NSForegroundColorAttributeName: UIColor(red: 41.0/255.0, green: 128.0/255.0, blue: 185.0/255.0, alpha: 1)]
         
