@@ -276,15 +276,37 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         
     }
     
+    @IBAction func avButt(sender: AnyObject?) {
+        //println("Test")
+        
+        //var cell = sender?.superview
+        //println(cell.superview)
+        
+        //var indexPath = self.tableView.indexPathForCell(cell as Cell)
+        
+        //println(indexPath?.row)
+        
+        //var myCell:Cell = tableView.dequeueReusableCellWithIdentifier("myCell") as Cell
+        //var cell:Cell = sender.superview.superview as UITableViewCell
+        //println(cell)
+        //var indexPath:NSIndexPath = self.tableView.indexPathForCell(cell)
+        
+        //println(indexPath)
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "avaclick"{
             
-            //var indexPath = self.tableView.indexPathForCell(cell: UITableViewCell.self)
+            let conn = sender?.superview as UIView?
+            let cell = conn?.superview as UITableViewCell
+            let row = tableView.indexPathForCell(cell)?.row
+            //println(titles[row!])
             
-            //let vc = segue.destinationViewController as UsersViewController
+            let vc = segue.destinationViewController as UsersViewController
+            vc.nameTitle = titles[row!]
             
-            println(sender)
+            //println("hello")
             
         }else{
             println("Procc")

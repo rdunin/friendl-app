@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -169,6 +170,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
+                                                <action selector="avButt:" destination="ZRv-Vt-fy1" eventType="touchUpInside" id="M9l-C9-ePx"/>
                                                 <action selector="avaClick:" destination="Xxf-dV-fIK" eventType="touchUpInside" id="dSr-aI-MBK"/>
                                                 <segue destination="R3H-2g-LGW" kind="show" identifier="avaclick" id="REt-FT-3zy"/>
                                             </connections>
@@ -324,7 +326,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-CL-fXB" userLabel="BgImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-CL-fXB" userLabel="BgImage">
                                 <rect key="frame" x="0.0" y="20" width="320" height="320"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -339,7 +341,7 @@
                                     <constraint firstAttribute="height" constant="2" id="cPR-8U-OZ2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-uE-76S" userLabel="ButImage">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-uE-76S" userLabel="ButImage">
                                 <rect key="frame" x="49" y="310" width="22" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Qxd-DU-upU"/>
@@ -350,7 +352,7 @@
                                     <action selector="pictureGet:" destination="d8r-xd-Cci" eventType="touchUpInside" id="asg-we-mS2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-eM-PHu" userLabel="ButBgs">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-eM-PHu" userLabel="ButBgs">
                                 <rect key="frame" x="82" y="310" width="22" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="PQY-CL-vVj"/>
@@ -363,7 +365,7 @@
                                     <action selector="bgsStyle:" destination="d8r-xd-Cci" eventType="touchUpInside" id="LTg-7x-TWi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssk-LE-JtC" userLabel="ButPhoto">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssk-LE-JtC" userLabel="ButPhoto">
                                 <rect key="frame" x="16" y="308" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="QZo-lC-jvM"/>
