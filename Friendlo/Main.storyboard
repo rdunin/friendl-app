@@ -288,11 +288,12 @@
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Hbv-BX-Ala">
-                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <rect key="frame" x="68" y="7" width="185" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="Friend"/>
+                                <segment title="Skills"/>
+                                <segment title="All"/>
                             </segments>
                             <connections>
                                 <action selector="toogleFeed:" destination="ZRv-Vt-fy1" eventType="valueChanged" id="tBa-LW-ypf"/>
@@ -313,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RJ-kU-xoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="17"/>
+            <point key="canvasLocation" x="1326" y="16.5"/>
         </scene>
         <!--Send View Controller-->
         <scene sceneID="YEd-G6-Q5e">
@@ -327,7 +328,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-CL-fXB" userLabel="BgImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-CL-fXB" userLabel="BgImage">
                                 <rect key="frame" x="0.0" y="20" width="320" height="320"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -342,7 +343,7 @@
                                     <constraint firstAttribute="height" constant="2" id="cPR-8U-OZ2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-uE-76S" userLabel="ButImage">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEW-uE-76S" userLabel="ButImage">
                                 <rect key="frame" x="49" y="310" width="22" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Qxd-DU-upU"/>
@@ -353,7 +354,7 @@
                                     <action selector="pictureGet:" destination="d8r-xd-Cci" eventType="touchUpInside" id="asg-we-mS2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-eM-PHu" userLabel="ButBgs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-eM-PHu" userLabel="ButBgs">
                                 <rect key="frame" x="82" y="310" width="22" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="PQY-CL-vVj"/>
@@ -366,7 +367,7 @@
                                     <action selector="bgsStyle:" destination="d8r-xd-Cci" eventType="touchUpInside" id="LTg-7x-TWi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssk-LE-JtC" userLabel="ButPhoto">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssk-LE-JtC" userLabel="ButPhoto">
                                 <rect key="frame" x="16" y="308" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="QZo-lC-jvM"/>
@@ -635,10 +636,10 @@
                                                                         <constraint firstAttribute="height" constant="35" id="s5R-dH-lTs"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpP-7W-akf" userLabel="name">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpP-7W-akf" userLabel="name">
                                                                     <rect key="frame" x="51" y="8" width="261" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                                    <color key="textColor" red="0.15737565479157903" green="0.2724436905579708" blue="0.89180086096938771" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggq-tL-Lho" userLabel="comm">
@@ -817,8 +818,8 @@
         <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KBk-M2-qdp"/>
-        <segue reference="qkI-Bz-tLf"/>
+        <segue reference="QEr-Ft-xzq"/>
+        <segue reference="ly7-60-AJ2"/>
         <segue reference="cQ9-aX-89l"/>
     </inferredMetricsTieBreakers>
 </document>

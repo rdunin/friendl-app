@@ -47,7 +47,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         super.viewDidLoad()
         
         //UIApplication.sharedApplication().statusBarHidden = false
-        gets()
+        //gets()
         
         var query = PFQuery(className:"Post")
         //query.whereKey("username", equalTo: PFUser.currentUser().username)

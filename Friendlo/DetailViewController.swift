@@ -24,27 +24,7 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
         
     }
     
-    @IBOutlet var commText: UITextField!
-    @IBAction func postButton(sender: AnyObject) {
-        println(commText.text)
-        tableView.reloadData()
-        commText.text = ""
-    }
-    
     var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon", "Hello", "Petya", "Visi", "Colya", "Gylla"]
-    
-    var hotels:[String: String] = ["The Grand Del Mar": "5300 Grand Del Mar Court, San Diego, CA 92130 5300 Grand Del Mar Court",
-        "French Quarter Inn": "166 Church St, Charleston, SC 29401 5300 Grand Del Mar Court",
-        "Bardessono": "6526 Yount Street, Yountville, CA 94599",
-        "Hotel Yountville": "6462 Washington Street, Yountville, CA 94599",
-        "Islington Hotel": "321 Davey Street, Hobart, Tasmania 7000, Australia",
-        "The Henry Jones Art Hotel": "25 Hunter Street, Hobart, Tasmania 7000, Australia",
-        "Clarion Hotel City Park Grand": "22 Tamar Street, Launceston, Tasmania 7250, Australia",
-        "Quality Hotel Colonial Launceston": "31 Elizabeth St, Launceston, Tasmania 7250, Australia",
-        "Premier Inn Swansea Waterfront": "Waterfront Development, Langdon Rd, Swansea SA1 8PL, Wales",
-        "Hatcher's Manor": "73 Prossers Road, Richmond, Clarence, Tasmania 7025, Australia"]
-    
-    var hotelNames:[String] = []
     
     var nameTitle: String?
     var myDetailImage: String?
@@ -52,6 +32,40 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
     var red = CGFloat()
     var green = CGFloat()
     var blue = CGFloat()
+    
+    var hotels:[String: String] = ["The Grand Del Mar": "5300 Grand Del Mar Court, San Diego, CA 92130 5300 Grand Del Mar Court",
+        
+        "French Quarter Inn": "166 Church St, Charleston, SC 29401 5300 Grand Del Mar Court",
+        
+        "Bardessono": "6526 Yount Street, Yountville, CA 94599",
+        
+        "Hotel Yountville": "6462 Washington Street, Yountville, CA 94599",
+        
+        "Islington Hotel": "321 Davey Street, Hobart, Tasmania 7000, Australia",
+        
+        "The Henry Jones Art Hotel": "25 Hunter Street, Hobart, Tasmania 7000, Australia",
+        
+        "Clarion Hotel City Park Grand": "22 Tamar Street, Launceston, Tasmania 7250, Australia",
+        
+        "Quality Hotel Colonial Launceston": "31 Elizabeth St, Launceston, Tasmania 7250, Australia",
+        
+        "Premier Inn Swansea Waterfront": "Waterfront Development, Langdon Rd, Swansea SA1 8PL, Wales",
+        
+        "Hatcher's Manor": "73 Prossers Road, Richmond, Clarence, Tasmania 7025, Australia"]
+    
+     var hotelNames:[String] = []
+    
+    @IBOutlet var commText: UITextField!
+    @IBAction func postButton(sender: AnyObject) {
+        println(commText.text)
+        
+        hotels[PFUser.currentUser().username] = commText.text
+        hotelNames = [String](hotels.keys)
+        
+        tableView.reloadData()
+        commText.text = ""
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +95,24 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        if hotels.count == 0 {
+            
+            var messageLabel: UILabel = UILabel(frame: CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height))
+            messageLabel.text = "This post don't have any comment yet. You can be first!"
+            messageLabel.textColor = UIColor.blackColor()
+            messageLabel.center = CGPointMake(10, 20)
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = NSTextAlignment.Center
+            messageLabel.font = UIFont(name: "Helvetica Neue", size: 22.0)
+            messageLabel.sizeToFit()
+            
+            tableView.backgroundView = messageLabel
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            
+        }
+        
         return hotels.count
     }
     
