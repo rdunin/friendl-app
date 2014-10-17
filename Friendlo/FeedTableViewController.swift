@@ -16,6 +16,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
     var pic = [Int]()
     var titles = [String]()
     var userId = [String]()
+    var postId = [String]()
     var avatar = [PFFile]()
     var images = [UIImage]()
     var imageFiles = [PFFile]()
@@ -60,11 +61,13 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
                 NSLog("Successfully retrieved \(objects.count) scores.")
                 // Do something with the found objects
                 
+                
                 for object in objects {
                     
                     self.pic.append(object["pic"] as Int)
                     self.titles.append(object["title"] as String)
                     self.userId.append(object["userId"] as String)
+                    self.postId.append(object.objectId as String)
                     
                     if object["pic"] as Int == 1 {
                         self.imageFiles.append(object["imagefile"] as PFFile)
@@ -214,7 +217,7 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         var detailedViewController: DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
         
         detailedViewController.nameTitle = titles[indexPath.row]
-        
+        detailedViewController.postId = postId[indexPath.row]
         
         var poster = PFUser.query()
         poster.whereKey("objectId", equalTo: userId[indexPath.row])

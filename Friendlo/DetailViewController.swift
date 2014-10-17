@@ -9,6 +9,17 @@
 import UIKit
 
 class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelegate {
+    
+    func dispayAlert (title:String, error:String) {
+        var alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
+            
+            alert.dismissViewControllerAnimated(true, completion: nil)
+            
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
     @IBOutlet var clike: UILabel!
     @IBOutlet var ccomm: UILabel!
@@ -27,59 +38,53 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
     var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon", "Hello", "Petya", "Visi", "Colya", "Gylla"]
     
     var nameTitle: String?
+    var postId: String?
     var myDetailImage: String?
     var tik: Int?
     var red = CGFloat()
     var green = CGFloat()
     var blue = CGFloat()
     
-    var hotels:[String: String] = ["The Grand Del Mar": "5300 Grand Del Mar Court, San Diego, CA 92130 5300 Grand Del Mar Court",
-        
-        "French Quarter Inn": "166 Church St, Charleston, SC 29401 5300 Grand Del Mar Court",
-        
-        "Bardessono": "6526 Yount Street, Yountville, CA 94599",
-        
-        "Hotel Yountville": "6462 Washington Street, Yountville, CA 94599",
-        
-        "Islington Hotel": "321 Davey Street, Hobart, Tasmania 7000, Australia",
-        
-        "The Henry Jones Art Hotel": "25 Hunter Street, Hobart, Tasmania 7000, Australia",
-        
-        "Clarion Hotel City Park Grand": "22 Tamar Street, Launceston, Tasmania 7250, Australia",
-        
-        "Quality Hotel Colonial Launceston": "31 Elizabeth St, Launceston, Tasmania 7250, Australia",
-        
-        "Premier Inn Swansea Waterfront": "Waterfront Development, Langdon Rd, Swansea SA1 8PL, Wales",
-        
-        "Hatcher's Manor": "73 Prossers Road, Richmond, Clarence, Tasmania 7025, Australia"]
+    var comments = [String]()
+    var userIds = [String]()
     
-     var hotelNames:[String] = []
+    //var hotels = [String: String]()
+    //var hotelNames:[String] = []
     
     @IBOutlet var commText: UITextField!
     @IBAction func postButton(sender: AnyObject) {
-        println(commText.text)
         
-        hotels[PFUser.currentUser().username] = commText.text
-        hotelNames = [String](hotels.keys)
         
-        tableView.reloadData()
-        commText.text = ""
+        var comm = PFObject(className: "Comment")
+        comm["userId"] = PFUser.currentUser().objectId
+        comm["postId"] = postId
+        comm["posttext"] = commText.text
+        
+        comm.saveInBackgroundWithBlock{(success: Bool!, error: NSError!) -> Void in
+            
+            if success == false {
+                self.dispayAlert("Can't Post Comment", error: "Please try again latter")
+            } else {
+                
+                self.comments.append(self.commText.text as String)
+                self.userIds.append(PFUser.currentUser().objectId as String)
+                
+                self.tableView.reloadData()
+                self.commText.text = ""
+            }
+            
+        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.titleLabel.text = nameTitle
-        //self.postImage.image = UIImage(named: "placeholder.png")
-        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        if tik == 0 {
-            //self.postImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
-            self.postImage.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-        }
+        println(comments.count)
         
-        hotelNames = [String](hotels.keys)
+        
+        //hotelNames = [String](hotels.keys)
         
         tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -97,7 +102,7 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         
         
-        if hotels.count == 0 {
+        if comments.count == -1 {
             
             var messageLabel: UILabel = UILabel(frame: CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height))
             messageLabel.text = "This post don't have any comment yet. You can be first!"
@@ -113,7 +118,7 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
             
         }
         
-        return hotels.count
+        return comments.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -125,7 +130,6 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
         
         comcell.avaImage.layer.cornerRadius = comcell.avaImage.frame.size.width / 2
         comcell.avaImage.clipsToBounds = true
-        
         comcell.avaImage.layer.borderWidth = 1.0
         comcell.avaImage.layer.borderColor = UIColor.blackColor().CGColor
         
@@ -133,12 +137,11 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
         //self.profileImageView.clipsToBounds = YES;
         //self.profileImageView.layer.borderWidth = 3.0f;
         //self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-
+        //let hotelName = hotelNames[indexPath.row]
         
         
-        let hotelName = hotelNames[indexPath.row]
-        comcell.name.text = hotelName
-        comcell.comm.text = hotels[hotelName]
+        comcell.name.text = userIds[indexPath.row]
+        comcell.comm.text = comments[indexPath.row]
         
         return comcell
     }
@@ -152,7 +155,39 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(animated: Bool) {
+        
+        self.titleLabel.text = nameTitle
+        //self.postImage.image = UIImage(named: "placeholder.png")
+        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        if tik == 0 {
+            //self.postImage.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+            self.postImage.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        }
+        
+        
+        var query = PFQuery(className:"Comment")
+        query.whereKey("postId", equalTo: postId)
+        //query.orderByDescending("createdAt")
+        //query.cachePolicy = kPFCachePolicyCacheElseNetwork
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                
+                for object in objects {
+                    
+                    self.comments.append(object["posttext"] as String)
+                    self.userIds.append(object["userId"] as String)
+                    
+                    self.tableView.reloadData()
+                }
+                
+            }
+            
+        }
+        
+    }
     
     
     /*
