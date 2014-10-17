@@ -44,7 +44,7 @@ class UsersViewController: UIViewController {
         avatar.layer.borderColor = UIColor.whiteColor().CGColor
         
         var poster = PFUser.query()
-        poster.whereKey("username", equalTo: usernam)
+        poster.whereKey("objectId", equalTo: usernam)
         poster.findObjectsInBackgroundWithBlock {
             (users: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
@@ -56,6 +56,12 @@ class UsersViewController: UIViewController {
                     //self.avatar.append(object["picture"] as PFFile)
                     //detailedViewController.sname.setTitle(nam, forState: UIControlState.Normal)
                     
+                    var url:NSURL = NSURL.URLWithString(NSString(format:"https://graph.facebook.com/%@/picture?width=320", use["fbid"] as String))
+                    var err: NSError?
+                    var imageData :NSData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
+                    self.avatar.image = UIImage(data: imageData)
+                    
+                    /*
                     let userImageFile = use["picture"] as PFFile
                     userImageFile.getDataInBackgroundWithBlock {
                         (imageData: NSData!, error: NSError!) -> Void in
@@ -64,6 +70,7 @@ class UsersViewController: UIViewController {
                             //avatar.setImage(image, forState: UIControlState.Normal)
                         }
                     }
+                    */
                     
                 }
             }

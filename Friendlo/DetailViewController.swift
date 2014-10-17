@@ -38,6 +38,7 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
     var items = ["We", "Heart", "Swift", "Roman", "Alona", "Sasha", "Vasia", "Bella", "Shon", "Hello", "Petya", "Visi", "Colya", "Gylla"]
     
     var nameTitle: String?
+    var counts: Int32?
     var postId: String?
     var myDetailImage: String?
     var tik: Int?
@@ -82,7 +83,7 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
 
         
         println(comments.count)
-        
+        println(counts)
         
         //hotelNames = [String](hotels.keys)
         
@@ -186,6 +187,9 @@ class DetailViewController: ResponsiveTextFieldViewController, UITableViewDelega
             }
             
         }
+        
+        println(comments.count)
+        println(counts)
         
     }
     

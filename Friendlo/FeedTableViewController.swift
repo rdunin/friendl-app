@@ -179,6 +179,16 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
             }
         }
         
+        var query = PFQuery(className:"Comment")
+        query.whereKey("postId", equalTo: postId[indexPath.row])
+        query.cachePolicy = kPFCachePolicyCacheElseNetwork
+        query.countObjectsInBackgroundWithBlock {
+            (count: Int32, error: NSError!) -> Void in
+            if error == nil {
+                myCell.countComm.text = String(count)
+            }
+        }
+        
         
         if pic[indexPath.row] == 1 {
         
@@ -218,6 +228,17 @@ class FeedTableViewController: UITableViewController, FBLoginViewDelegate {
         
         detailedViewController.nameTitle = titles[indexPath.row]
         detailedViewController.postId = postId[indexPath.row]
+        
+        var query = PFQuery(className:"Comment")
+        query.whereKey("postId", equalTo: postId[indexPath.row])
+        query.cachePolicy = kPFCachePolicyCacheElseNetwork
+        query.countObjectsInBackgroundWithBlock {
+            (count: Int32, error: NSError!) -> Void in
+            if error == nil {
+                 detailedViewController.counts = count
+                 detailedViewController.ccomm.text = String(count)
+            }
+        }
         
         var poster = PFUser.query()
         poster.whereKey("objectId", equalTo: userId[indexPath.row])
